@@ -17,7 +17,7 @@ function slugify(text: string, sep: string, lower: boolean, removeNumbers: boole
 }
 
 export default function SlugGenerator() {
-  const [text, setText] = useState("Hello World! This is ToolVault 2024");
+  const [text, setText] = useState("Hello World! This is ToolNook 2024");
   const [sep, setSep] = useState("-");
   const [lower, setLower] = useState(true);
   const [removeNumbers, setRemoveNumbers] = useState(false);

@@ -12,7 +12,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
           <span className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-primary">
             <span className="h-2 w-2 rounded-[3px] bg-accent" aria-hidden />
-            ToolVault
+            ToolNook
           </span>
           <div className="flex items-center gap-3">
             <span className="rounded border border-border px-2 py-0.5 text-xs text-muted">Admin</span>

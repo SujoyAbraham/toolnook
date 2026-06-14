@@ -5,7 +5,7 @@ import { Label, Textarea } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
 import { downloadText } from "@/lib/utils";
 
-const SAMPLE = `# ToolVault Markdown
+const SAMPLE = `# ToolNook Markdown
 
 Write **bold**, *italic* and \`inline code\`.
 

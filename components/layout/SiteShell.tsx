@@ -5,7 +5,7 @@ import { Topbar } from "@/components/layout/Topbar";
 import { Sidebar } from "@/components/layout/Sidebar";
 
 // Update these with your own profile URLs.
-const GITHUB_URL = "https://github.com/your-username";
+const GITHUB_URL = "https://github.com/SujoyAbraham";
 const LINKEDIN_URL = "https://www.linkedin.com/in/your-profile";
 
 /** Public shell: top bar, sidebar, footer. Admin pages deliberately omit this. */
@@ -20,7 +20,7 @@ export async function SiteShell({ children }: { children: React.ReactNode }) {
           <main className="flex-1">{children}</main>
           <footer className="flex flex-col items-center justify-between gap-3 border-t border-border px-6 py-5 text-xs text-muted sm:flex-row">
             <p>
-              <span className="font-medium text-primary">ToolVault</span> · Everything runs in
+              <span className="font-medium text-primary">ToolNook</span> · Everything runs in
               your browser · We never see your data
             </p>
             <nav className="flex items-center gap-1" aria-label="Social and admin">

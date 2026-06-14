@@ -52,7 +52,7 @@ function highlightXml(code: string): string {
 }
 
 export default function ApiResponseFormatter() {
-  const [input, setInput] = useState('{"name":"ToolVault","tools":36,"free":true,"server":null}');
+  const [input, setInput] = useState('{"name":"ToolNook","tools":36,"free":true,"server":null}');
   const [minify, setMinify] = useState(false);
 
   const { output, format, error } = useMemo(() => {

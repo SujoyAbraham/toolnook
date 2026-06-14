@@ -8,7 +8,7 @@ import {
   FALLBACK_MODELS,
 } from "./ai-models-fallback";
 
-const CACHE_KEY = "toolvault-models-v1";
+const CACHE_KEY = "toolnook-models-v1";
 const ONE_HOUR = 60 * 60 * 1000;
 const MODELS_URL = "https://openrouter.ai/api/v1/models";
 const MIN_MODELS = 5;

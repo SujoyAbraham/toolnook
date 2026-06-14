@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
-const STORAGE_KEY = "toolvault-theme";
+const STORAGE_KEY = "toolnook-theme";
 
 type Theme = "dark" | "light";
 

@@ -27,8 +27,8 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ToolVault — A quiet workspace of professional tools",
-    template: "%s — ToolVault",
+    default: "ToolNook — A quiet workspace of professional tools",
+    template: "%s — ToolNook",
   },
   description:
     "Focused browser-native tools for developers and writers. Everything runs client-side — your data never leaves the tab.",

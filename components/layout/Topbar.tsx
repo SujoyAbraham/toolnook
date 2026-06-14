@@ -105,7 +105,7 @@ export function Topbar({ hidden }: { hidden: string[] }) {
         <span className="flex h-6 w-6 items-center justify-center rounded-md bg-accent text-[13px] font-bold text-ink-contrast" aria-hidden>
           T
         </span>
-        ToolVault
+        ToolNook
       </Link>
 
       <div ref={containerRef} className="relative mx-auto w-full max-w-sm">

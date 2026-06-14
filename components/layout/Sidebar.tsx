@@ -9,7 +9,7 @@ import { useEffectiveHidden } from "@/lib/visibility-client";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/utils";
 
-const COLLAPSE_KEY = "toolvault-sidebar-collapsed";
+const COLLAPSE_KEY = "toolnook-sidebar-collapsed";
 
 export function Sidebar({ hidden }: { hidden: string[] }) {
   const pathname = usePathname();

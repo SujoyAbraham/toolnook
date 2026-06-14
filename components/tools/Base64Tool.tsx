@@ -27,8 +27,8 @@ export default function Base64Tool() {
   const [tab, setTab] = useState<Tab>("text");
 
   // text mode
-  const [plain, setPlain] = useState("Hello, ToolVault!");
-  const [encoded, setEncoded] = useState(encodeText("Hello, ToolVault!"));
+  const [plain, setPlain] = useState("Hello, ToolNook!");
+  const [encoded, setEncoded] = useState(encodeText("Hello, ToolNook!"));
   const [textError, setTextError] = useState<string | null>(null);
 
   // file mode

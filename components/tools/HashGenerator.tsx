@@ -31,7 +31,7 @@ async function computeHashes(bytes: Uint8Array): Promise<Hashes> {
 
 export default function HashGenerator() {
   const [tab, setTab] = useState<Tab>("text");
-  const [text, setText] = useState("Hello, ToolVault!");
+  const [text, setText] = useState("Hello, ToolNook!");
   const [hashes, setHashes] = useState<Hashes | null>(null);
   const [fileMeta, setFileMeta] = useState<{ name: string; size: number } | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);

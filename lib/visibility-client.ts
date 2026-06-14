@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
  * unsaved toggles. Public visitors never have this key, so they only ever see
  * the server-rendered (live) state — no flash of hidden tools.
  */
-export const PREVIEW_KEY = "toolvault-preview";
-export const PREVIEW_EVENT = "toolvault:preview";
+export const PREVIEW_KEY = "toolnook-preview";
+export const PREVIEW_EVENT = "toolnook:preview";
 
 export function useEffectiveHidden(liveHidden: string[]): string[] {
   const [hidden, setHidden] = useState<string[]>(liveHidden);

@@ -12,7 +12,7 @@ type Mode = "json2yaml" | "yaml2json";
 
 export default function JsonYaml() {
   const [mode, setMode] = useState<Mode>("json2yaml");
-  const [input, setInput] = useState('{\n  "name": "ToolVault",\n  "tools": 36,\n  "tags": ["fast", "private"]\n}');
+  const [input, setInput] = useState('{\n  "name": "ToolNook",\n  "tools": 36,\n  "tags": ["fast", "private"]\n}');
 
   const { output, error } = useMemo(() => {
     if (!input.trim()) return { output: "", error: null };

@@ -1,6 +1,6 @@
-# ToolVault — Architecture
+# ToolNook — Architecture
 
-This document explains the structural choices behind ToolVault, especially the
+This document explains the structural choices behind ToolNook, especially the
 constraints imposed by the **Vercel Hobby (free) plan**. Read this before
 changing the shell, the admin layer, or the storage code.
 
@@ -66,7 +66,7 @@ tool page static and the function count at 2.
 ## Admin preview (local, per-browser)
 
 While signed in, the dashboard writes the pending hidden list to
-`localStorage["toolvault-preview"]` and dispatches an event. The public shell in
+`localStorage["toolnook-preview"]` and dispatches an event. The public shell in
 the same browser reads it (`lib/visibility-client.ts`) and reflects unsaved
 changes. Public visitors never have this key, so they only ever see the live,
 server-rendered state — there is no flash of hidden tools. "Save to live" and

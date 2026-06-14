@@ -1,4 +1,4 @@
-# ToolVault
+# ToolNook
 
 A **100% client-side** multi-tool workspace built with Next.js 15. Every tool runs entirely in the browser — no data ever leaves the tab, no server-side processing, no telemetry. An optional, server-secured admin area controls which tools are public.
 
@@ -20,7 +20,7 @@ npm run typecheck  # tsc --noEmit
 
 ## Design
 
-Light mode is the default; dark mode is a toggle (`.dark` on `<html>`, persisted in `localStorage["toolvault-theme"]`, applied pre-paint to avoid flashes). The visual language is editorial and restrained: one neutral base, a single teal accent used sparingly, subtle borders over shadows. All theming flows through CSS variables in `app/globals.css`.
+Light mode is the default; dark mode is a toggle (`.dark` on `<html>`, persisted in `localStorage["toolnook-theme"]`, applied pre-paint to avoid flashes). The visual language is editorial and restrained: one neutral base, a single teal accent used sparingly, subtle borders over shadows. All theming flows through CSS variables in `app/globals.css`.
 
 ## Architecture
 
@@ -31,7 +31,7 @@ Light mode is the default; dark mode is a toggle (`.dark` on `<html>`, persisted
 The admin area (`/admin`) lets you hide/show tools. Visibility is stored in **Vercel Edge Config** with `lib/tools-overrides.json` as a silent fallback.
 
 1. **Create an Edge Config** in the Vercel dashboard.
-2. **Connect it to the ToolVault project** — Vercel auto-injects the `EDGE_CONFIG` env var.
+2. **Connect it to the ToolNook project** — Vercel auto-injects the `EDGE_CONFIG` env var.
 3. **Initialize an item:** key `hiddenTools`, value `[]`.
 4. **Generate a Vercel Access Token** scoped to this project; add it as `VERCEL_ACCESS_TOKEN`.
 5. **Add `VERCEL_PROJECT_ID`** (and `VERCEL_TEAM_ID` if the project is team-owned).
