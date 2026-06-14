@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { revalidatePath } from "next/cache";
+import { auth } from "@/auth";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { clearHiddenToolsCache } from "@/lib/visibility";
 
@@ -11,8 +12,11 @@ function edgeConfigId(): string | null {
 }
 
 export async function POST(req: NextRequest) {
+  // Accept either auth method: a Google (Auth.js) session or the password cookie.
+  const session = await auth();
   const token = req.cookies.get(SESSION_COOKIE)?.value;
-  if (!(await verifySessionToken(token))) {
+  const authorized = Boolean(session?.user) || (await verifySessionToken(token));
+  if (!authorized) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
