@@ -6,7 +6,7 @@ import { Sidebar } from "@/components/layout/Sidebar";
 
 // Update these with your own profile URLs.
 const GITHUB_URL = "https://github.com/SujoyAbraham";
-const LINKEDIN_URL = "https://www.linkedin.com/in/your-profile";
+const LINKEDIN_URL = "https://www.linkedin.com/in/sujoyabraham/";
 
 /** Public shell: top bar, sidebar, footer. Admin pages deliberately omit this. */
 export async function SiteShell({ children }: { children: React.ReactNode }) {
