@@ -1,8 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { auth } from "@/auth";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/admin-auth";
-import { clearHiddenToolsCache } from "@/lib/visibility";
+import { HIDDEN_TOOLS_TAG } from "@/lib/visibility";
 
 /** Extract the Edge Config id (ecfg_…) from the EDGE_CONFIG connection string. */
 function edgeConfigId(): string | null {
@@ -55,7 +55,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Write failed" }, { status: 502 });
   }
 
-  clearHiddenToolsCache();
+  // Invalidate the cached visibility list everywhere, then regenerate pages.
+  revalidateTag(HIDDEN_TOOLS_TAG);
   revalidatePath("/", "layout");
 
   // Audit log: timestamp + count only. Never log IP or session details.

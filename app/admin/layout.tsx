@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { cookies } from "next/headers";
-import { LogOut } from "lucide-react";
+import { ArrowUpRight, LogOut } from "lucide-react";
 import { auth } from "@/auth";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -20,12 +21,22 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <div className="flex min-h-screen flex-col">
       <header className="flex h-14 items-center border-b border-border px-5">
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
-          <span className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-primary">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-primary transition-colors hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
             <span className="h-2 w-2 rounded-[3px] bg-accent" aria-hidden />
             ToolNook
-          </span>
+          </Link>
           <div className="flex items-center gap-3">
             <span className="rounded border border-border px-2 py-0.5 text-xs text-muted">Admin</span>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1 text-xs text-muted transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              View site
+              <ArrowUpRight size={13} />
+            </Link>
             {loggedIn && (
               <form action={logout}>
                 <button
