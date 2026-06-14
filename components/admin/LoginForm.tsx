@@ -34,31 +34,21 @@ export function LoginForm() {
   }
 
   return (
-    <form
-      onSubmit={submit}
-      className="w-full max-w-sm rounded-lg border border-border bg-surface p-6"
-      autoComplete="off"
-    >
-      <h1 className="text-lg font-semibold tracking-tight text-primary">Admin access</h1>
-      <p className="mt-1 text-sm text-muted">Enter the admin password to continue.</p>
-
-      <div className="mt-5">
-        <Label htmlFor="admin-password">Password</Label>
-        <Input
-          id="admin-password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          aria-label="Admin password"
-          autoComplete="off"
-          autoFocus
-        />
-      </div>
+    <form onSubmit={submit} autoComplete="off">
+      <Label htmlFor="admin-password">Password</Label>
+      <Input
+        id="admin-password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        aria-label="Admin password"
+        autoComplete="off"
+      />
 
       {error && <p className="mt-3 text-sm text-error">Incorrect password. Please try again.</p>}
 
-      <Button type="submit" className="mt-5 w-full" disabled={busy || password.length === 0}>
-        {busy ? "Checking…" : "Sign in"}
+      <Button type="submit" className="mt-4 w-full" disabled={busy || password.length === 0}>
+        {busy ? "Checking…" : "Sign in with password"}
       </Button>
     </form>
   );

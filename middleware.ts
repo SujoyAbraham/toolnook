@@ -1,18 +1,23 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import { auth } from "@/auth";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 
 /**
- * Guards /admin pages only. The matcher is scoped strictly to /admin and
- * /admin/* so this middleware never runs on public requests (keeping us within
- * the Hobby plan's edge request budget). Unauthenticated requests are redirected
- * server-side before any admin page renders.
+ * Guards /admin pages only (matcher below), so this never runs on public
+ * requests. Access is granted by EITHER a valid Google session (Auth.js) OR a
+ * valid password session cookie. Unauthenticated requests are redirected to the
+ * login page before any admin page renders.
  */
-export async function middleware(req: NextRequest) {
+export default auth(async (req) => {
   const { pathname } = req.nextUrl;
 
   // The login page must be reachable without a session.
   if (pathname === "/admin/login") return NextResponse.next();
 
+  // Google session (Auth.js attaches it to req.auth).
+  if (req.auth?.user) return NextResponse.next();
+
+  // Password session.
   const token = req.cookies.get(SESSION_COOKIE)?.value;
   if (await verifySessionToken(token)) return NextResponse.next();
 
@@ -20,7 +25,7 @@ export async function middleware(req: NextRequest) {
   url.pathname = "/admin/login";
   url.search = "";
   return NextResponse.redirect(url);
-}
+});
 
 export const config = {
   matcher: ["/admin", "/admin/:path*"],

@@ -9,7 +9,13 @@ import { cn, downloadText } from "@/lib/utils";
 
 type Status = { kind: "idle" | "ok" | "error" | "busy"; message: string };
 
-export function AdminDashboard({ initialHidden }: { initialHidden: string[] }) {
+export function AdminDashboard({
+  initialHidden,
+  onLogout,
+}: {
+  initialHidden: string[];
+  onLogout: () => Promise<void>;
+}) {
   const [hidden, setHidden] = useState<string[]>(initialHidden);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
@@ -80,8 +86,8 @@ export function AdminDashboard({ initialHidden }: { initialHidden: string[] }) {
     } catch {
       // ignore storage errors
     }
-    await fetch("/api/admin/logout", { method: "POST" });
-    window.location.href = "/admin/login";
+    // Clears both the password cookie and any Google session, then redirects.
+    await onLogout();
   }
 
   const rows = useMemo(() => {
