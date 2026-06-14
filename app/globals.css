@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ── Design tokens mapped to Tailwind utilities ─────────────────── */
+@theme inline {
+  --color-base: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-ink: var(--ink);
+  --color-ink-contrast: var(--ink-contrast);
+  --color-primary: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  /* The fallback lives INSIDE var() so that if the web font fails to load,
+     the family resolves to a system sans — never an invalid value that the
+     browser would silently replace with serif (Times). */
+  --font-sans: var(--font-sans-src, ui-sans-serif), system-ui, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-display-src, ui-sans-serif), system-ui, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-mono-src, ui-monospace), "SFMono-Regular", Menlo,
+    Consolas, monospace;
+}
+
+/* ── Light theme (default) ──────────────────────────────────────── */
+:root {
+  --bg-base: #fbfbfa;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f5f4f2;
+  --border: #e7e6e1;
+  --accent: #0f766e;
+  --accent-hover: #0c5f58;
+  --ink: #1b1b19;
+  --ink-contrast: #ffffff;
+  --text-primary: #1b1b19;
+  --text-muted: #6b6a64;
+  --success: #15803d;
+  --error: #b91c1c;
+}
+
+/* ── Dark theme (toggle) ────────────────────────────────────────── */
+.dark {
+  --bg-base: #161614;
+  --bg-surface: #1c1c1a;
+  --bg-elevated: #232320;
+  --border: #2d2d29;
+  --accent: #2da192;
+  --accent-hover: #38b5a5;
+  --ink: #f2f1ec;
+  --ink-contrast: #161614;
+  --text-primary: #f2f1ec;
+  --text-muted: #a2a199;
+  --success: #4ade80;
+  --error: #f87171;
+}
+
+html,
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings and the wordmark use the display family for a distinct feel. */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Quiet, thin scrollbars */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Match highlight used by the regex tool */
+mark.dev-match {
+  background-color: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--text-primary);
+  border-radius: 2px;
+}
