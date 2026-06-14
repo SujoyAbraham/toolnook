@@ -17,45 +17,47 @@ export async function SiteShell({ children }: { children: React.ReactNode }) {
       <div className="mx-auto flex w-full max-w-[1440px] flex-1">
         <Sidebar hidden={hidden} />
         <div className="flex min-w-0 flex-1 flex-col">
-          <main className="flex-1">{children}</main>
-          <footer className="flex flex-col items-center justify-between gap-3 border-t border-border px-6 py-5 text-xs text-muted sm:flex-row">
-            <p>
-              <span className="font-medium text-primary">ToolNook</span> · Everything runs in
-              your browser · We never see your data
-            </p>
-            <nav className="flex items-center gap-1" aria-label="Social and admin">
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                title="GitHub"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-md transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <Github size={16} />
-              </a>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-md transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <Linkedin size={16} />
-              </a>
-              <Link
-                href="/admin"
-                title="Admin"
-                className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <Lock size={13} />
-                Admin
-              </Link>
-            </nav>
-          </footer>
+          <main className="flex-1 pb-12">{children}</main>
         </div>
       </div>
+
+      {/* Always-visible compact footer bar, pinned to the bottom of the viewport. */}
+      <footer className="fixed inset-x-0 bottom-0 z-30 flex h-10 items-center justify-between gap-4 border-t border-border bg-base/90 px-5 text-xs text-muted backdrop-blur">
+        <p className="truncate">
+          <span className="font-medium text-primary">ToolNook</span>
+          <span className="hidden sm:inline"> · Everything runs in your browser · We never see your data</span>
+        </p>
+        <nav className="flex shrink-0 items-center gap-0.5" aria-label="Social and admin">
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+            className="inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            <Github size={15} />
+          </a>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+            className="inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            <Linkedin size={15} />
+          </a>
+          <Link
+            href="/admin"
+            title="Admin"
+            className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 transition-colors hover:bg-elevated hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            <Lock size={13} />
+            Admin
+          </Link>
+        </nav>
+      </footer>
     </div>
   );
 }

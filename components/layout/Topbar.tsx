@@ -102,8 +102,11 @@ export function Topbar({ hidden }: { hidden: string[] }) {
         href="/"
         className="font-display flex items-center gap-2 text-[16px] font-bold text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
-        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-accent text-[13px] font-bold text-ink-contrast" aria-hidden>
-          T
+        <span
+          className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[#19b3a3] to-[#0c5f58] text-[10px] font-bold tracking-tight text-white"
+          aria-hidden
+        >
+          TN
         </span>
         ToolNook
       </Link>
