@@ -1,0 +1,41 @@
+{
+  "name": "toolnook-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ToolNook browser extension (Chrome + Firefox) — side-panel tool launcher.",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "framer-motion": "11.18.0",
+    "fuse.js": "7.0.0",
+    "gpt-tokenizer": "^3.4.0",
+    "js-yaml": "4.1.0",
+    "jszip": "3.10.1",
+    "lucide-react": "0.469.0",
+    "pdf-lib": "1.17.1",
+    "qrcode": "1.5.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "sql-formatter": "15.4.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "@types/js-yaml": "4.0.9",
+    "@types/qrcode": "1.5.5",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
+    "@wxt-dev/module-react": "latest",
+    "tailwindcss": "^4.3.1",
+    "typescript": "5.7.3",
+    "wxt": "latest"
+  }
+}

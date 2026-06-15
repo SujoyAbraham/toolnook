@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Scan the reused web-app components + this extension for Tailwind classes. */
+@source "../../../components";
+@source "../../../lib";
+@source "../../components";
+@source ".";
+
+/* ── Design tokens mapped to Tailwind utilities (mirrors the web app) ── */
+@theme inline {
+  --color-base: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-ink: var(--ink);
+  --color-ink-contrast: var(--ink-contrast);
+  --color-primary: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+/* Light theme */
+:root {
+  --bg-base: #fbfbfa;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f5f4f2;
+  --border: #e7e6e1;
+  --accent: #0f766e;
+  --accent-hover: #0c5f58;
+  --ink: #1b1b19;
+  --ink-contrast: #ffffff;
+  --text-primary: #1b1b19;
+  --text-muted: #6b6a64;
+  --success: #15803d;
+  --error: #b91c1c;
+}
+
+/* Dark theme — follows the OS / browser preference automatically. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base: #161614;
+    --bg-surface: #1c1c1a;
+    --bg-elevated: #232320;
+    --border: #2d2d29;
+    --accent: #2da192;
+    --accent-hover: #38b5a5;
+    --ink: #f2f1ec;
+    --ink-contrast: #161614;
+    --text-primary: #f2f1ec;
+    --text-muted: #a2a199;
+    --success: #4ade80;
+    --error: #f87171;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: var(--border);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+mark.dev-match {
+  background-color: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--text-primary);
+  border-radius: 2px;
+}

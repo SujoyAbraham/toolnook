@@ -33,3 +33,9 @@ next-env.d.ts
 # editor
 .idea/
 .vscode/
+
+# browser extension (standalone sub-project — never built by Vercel)
+/extension/node_modules
+/extension/.output
+/extension/.wxt
+/extension/stats.html
