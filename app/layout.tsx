@@ -26,6 +26,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.toolnook.app"),
   title: {
     default: "ToolNook — A quiet workspace of professional tools",
     template: "%s — ToolNook",

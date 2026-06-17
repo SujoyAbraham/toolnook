@@ -86,7 +86,7 @@ export function AdminDashboard({
     } catch {
       // ignore storage errors
     }
-    // Clears both the password cookie and any Google session, then redirects.
+    // Clears the Google session, then redirects to the login page.
     await onLogout();
   }
 

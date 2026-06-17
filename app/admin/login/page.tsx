@@ -1,4 +1,3 @@
-import { LoginForm } from "@/components/admin/LoginForm";
 import { googleSignIn } from "@/app/admin/actions";
 
 // Show the Google button only when the OAuth credentials are configured.
@@ -22,27 +21,22 @@ export default function AdminLoginPage() {
         <h1 className="text-lg font-semibold tracking-tight text-primary">Admin access</h1>
         <p className="mt-1 text-sm text-muted">Sign in to manage tool visibility.</p>
 
-        {googleEnabled && (
-          <>
-            <form action={googleSignIn} className="mt-5">
-              <button
-                type="submit"
-                className="flex w-full items-center justify-center gap-2.5 rounded-md border border-border bg-base px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <GoogleMark />
-                Continue with Google
-              </button>
-            </form>
-
-            <div className="my-5 flex items-center gap-3 text-xs text-muted">
-              <span className="h-px flex-1 bg-border" />
-              or
-              <span className="h-px flex-1 bg-border" />
-            </div>
-          </>
+        {googleEnabled ? (
+          <form action={googleSignIn} className="mt-5">
+            <button
+              type="submit"
+              className="flex w-full items-center justify-center gap-2.5 rounded-md border border-border bg-base px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <GoogleMark />
+              Continue with Google
+            </button>
+          </form>
+        ) : (
+          <p className="mt-5 rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-300">
+            Admin sign-in is not configured. Set AUTH_GOOGLE_ID and
+            AUTH_GOOGLE_SECRET to enable Google authentication.
+          </p>
         )}
-
-        <LoginForm />
       </div>
     </div>
   );
