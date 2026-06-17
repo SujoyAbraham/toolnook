@@ -20,7 +20,7 @@ export function CaveatBadge({ children, dismissible = true, className }: CaveatB
     <div
       role="note"
       className={cn(
-        "flex items-start gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-300",
+        "flex items-start gap-2 rounded-lg border border-warning/40 bg-warning/10 px-3 py-2 text-sm text-warning",
         className,
       )}
     >
@@ -31,7 +31,7 @@ export function CaveatBadge({ children, dismissible = true, className }: CaveatB
           type="button"
           onClick={() => setHidden(true)}
           aria-label="Dismiss caveat"
-          className="shrink-0 rounded p-0.5 text-amber-300/70 transition-colors hover:text-amber-200"
+          className="shrink-0 rounded p-0.5 text-warning/70 transition-colors hover:text-warning"
         >
           <X size={15} />
         </button>

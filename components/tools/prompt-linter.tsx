@@ -109,13 +109,13 @@ function scoreFor(issues: Issue[]): number {
 
 function verdict(score: number): { label: string; color: string } {
   if (score < 50) return { label: "Needs Work", color: "text-error" };
-  if (score < 80) return { label: "Good", color: "text-amber-400" };
+  if (score < 80) return { label: "Good", color: "text-warning" };
   return { label: "Excellent", color: "text-success" };
 }
 
 const SEVERITY_STYLE: Record<Severity, string> = {
   error: "border-error/40 bg-error/10 text-error",
-  warning: "border-amber-500/40 bg-amber-500/10 text-amber-300",
+  warning: "border-warning/40 bg-warning/10 text-warning",
   suggestion: "border-accent/40 bg-accent/10 text-accent",
 };
 

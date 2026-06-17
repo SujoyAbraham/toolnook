@@ -32,7 +32,7 @@ export default function AdminLoginPage() {
             </button>
           </form>
         ) : (
-          <p className="mt-5 rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-300">
+          <p className="mt-5 rounded-md border border-warning/40 bg-warning/10 px-3 py-2 text-sm text-warning">
             Admin sign-in is not configured. Set AUTH_GOOGLE_ID and
             AUTH_GOOGLE_SECRET to enable Google authentication.
           </p>

@@ -103,7 +103,7 @@ export function Topbar({ hidden }: { hidden: string[] }) {
         className="font-display flex items-center gap-2 text-[16px] font-bold text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         <span
-          className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[#19b3a3] to-[#0c5f58] text-[10px] font-bold tracking-tight text-white"
+          className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[#6366f1] to-[#4338ca] text-[10px] font-bold tracking-tight text-white"
           aria-hidden
         >
           TN
