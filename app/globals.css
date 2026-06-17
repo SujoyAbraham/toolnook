@@ -14,6 +14,7 @@
   --color-muted: var(--text-muted);
   --color-success: var(--success);
   --color-error: var(--error);
+  --color-warning: var(--warning);
 
   /* The fallback lives INSIDE var() so that if the web font fails to load,
      the family resolves to a system sans — never an invalid value that the
@@ -32,14 +33,15 @@
   --bg-surface: #ffffff;
   --bg-elevated: #f5f4f2;
   --border: #e7e6e1;
-  --accent: #0f766e;
-  --accent-hover: #0c5f58;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
   --ink: #1b1b19;
   --ink-contrast: #ffffff;
   --text-primary: #1b1b19;
   --text-muted: #6b6a64;
   --success: #15803d;
   --error: #b91c1c;
+  --warning: #b45309;
 }
 
 /* ── Dark theme (toggle) ────────────────────────────────────────── */
@@ -48,14 +50,15 @@
   --bg-surface: #1c1c1a;
   --bg-elevated: #232320;
   --border: #2d2d29;
-  --accent: #2da192;
-  --accent-hover: #38b5a5;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
   --ink: #f2f1ec;
   --ink-contrast: #161614;
   --text-primary: #f2f1ec;
   --text-muted: #a2a199;
   --success: #4ade80;
   --error: #f87171;
+  --warning: #fbbf24;
 }
 
 html,

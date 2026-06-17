@@ -63,7 +63,8 @@ export default function TokenCounter() {
 
       <CaveatBadge>
         GPT token counts are exact. Claude, Gemini, Llama and other non-GPT models are
-        estimates within ±5–10%.
+        estimates within ±5–10%. Pricing is loaded from OpenRouter&rsquo;s public catalogue;
+        your text is tokenised locally and never sent anywhere.
       </CaveatBadge>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">

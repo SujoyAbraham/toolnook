@@ -46,7 +46,7 @@ export function DataFreshnessBadge({ source, updatedAt, loading, className }: Pr
         "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs",
         live
           ? "border-success/40 bg-success/10 text-success"
-          : "border-amber-500/40 bg-amber-500/10 text-amber-300",
+          : "border-warning/40 bg-warning/10 text-warning",
         className,
       )}
       title={live ? "Fetched from OpenRouter" : "Using built-in fallback model list"}

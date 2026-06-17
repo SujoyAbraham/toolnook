@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Check, Minus } from "lucide-react";
 import { Label, Select } from "@/components/ui/Field";
 import { Alert } from "@/components/ui/Alert";
+import { CaveatBadge } from "@/components/ui/CaveatBadge";
 import { DataFreshnessBadge } from "@/components/ui/DataFreshnessBadge";
 import { useModelsData } from "@/lib/useModelsData";
 import { OPENROUTER_FEE_NOTE, type SpeedTier } from "@/lib/ai-models-fallback";
@@ -58,6 +59,11 @@ export default function ModelComparator() {
         <DataFreshnessBadge source={source} updatedAt={updatedAt} loading={loading} />
         <span className="text-xs text-muted">{rows.length} models</span>
       </div>
+
+      <CaveatBadge>
+        This tool fetches the public model price list from OpenRouter to stay current.
+        Nothing you type or select is ever sent — only a read-only catalogue is loaded.
+      </CaveatBadge>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-4">
         <div>

@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { cookies } from "next/headers";
 import { ArrowUpRight, LogOut } from "lucide-react";
 import { auth } from "@/auth";
-import { SESSION_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { logout } from "@/app/admin/actions";
 
@@ -12,10 +10,9 @@ export const metadata = {
 };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  // Show "Log out" only when there is an active session (Google or password).
+  // Show "Log out" only when there is an active Google session.
   const session = await auth();
-  const token = (await cookies()).get(SESSION_COOKIE)?.value;
-  const loggedIn = Boolean(session?.user) || (await verifySessionToken(token));
+  const loggedIn = Boolean(session?.user);
 
   return (
     <div className="flex min-h-screen flex-col">

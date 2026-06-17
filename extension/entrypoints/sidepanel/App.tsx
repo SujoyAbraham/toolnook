@@ -63,7 +63,7 @@ export function App() {
     <div className="flex h-screen flex-col">
       <header className="border-b border-border bg-base px-3 py-2.5">
         <div className="flex items-center gap-2">
-          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[#19b3a3] to-[#0c5f58] text-[9px] font-bold tracking-tight text-white">
+          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[#6366f1] to-[#4338ca] text-[9px] font-bold tracking-tight text-white">
             TN
           </span>
           <span className="font-display text-sm font-bold text-primary">ToolNook</span>

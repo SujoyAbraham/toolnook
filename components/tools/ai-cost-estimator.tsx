@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Input, Label, Select } from "@/components/ui/Field";
 import { Alert } from "@/components/ui/Alert";
+import { CaveatBadge } from "@/components/ui/CaveatBadge";
 import { DataFreshnessBadge } from "@/components/ui/DataFreshnessBadge";
 import { useModelsData } from "@/lib/useModelsData";
 import { type AIModel, OPENROUTER_FEE_NOTE } from "@/lib/ai-models-fallback";
@@ -54,6 +55,11 @@ export default function AiCostEstimator() {
   return (
     <div className="space-y-4">
       <DataFreshnessBadge source={source} updatedAt={updatedAt} loading={loading} />
+
+      <CaveatBadge>
+        This tool fetches the public model price list from OpenRouter to stay current.
+        Nothing you type or select is ever sent — only a read-only catalogue is loaded.
+      </CaveatBadge>
 
       <Alert variant="info">
         Pricing from OpenRouter includes a ~5.5% fee. Self-hosted models show $0 API cost.
